@@ -1,17 +1,16 @@
 ---
-name: conventions-react-architecture
 description: >
-  React architecture conventions: component layering, co-location, and module
-  boundaries. Auto-imports conventions-general and conventions-react.
-  Project-specific or team conventions always take precedence; flag conflicts
-  rather than silently picking one.
+  React architecture conventions: component layers (foundation vs domain),
+  global state, co-location, and module boundaries. Use when working on
+  folder structure, component layering, or module organisation.
+user-invocable: false
 ---
 
-@../conventions-react/SKILL.md
+@../react/SKILL.md
 
 # Frontend Architecture Conventions
 
-> Extends conventions-general and conventions-react (both auto-imported above).
+> Extends general and react (both auto-imported above).
 > Project-specific rules always override these defaults.
 
 ## Component Layers

@@ -1,17 +1,16 @@
 ---
-name: conventions-node
 description: >
-  Node.js and pnpm conventions for server-side JS/TS projects: APIs, services,
-  CLI tools, and packages. Auto-imports conventions-general. Project-specific
-  or team conventions always take precedence; flag conflicts rather than
-  silently picking one.
+  Node.js conventions: ESM modules, pnpm, environment variables, structured
+  logging, and process lifecycle. Use when writing or reviewing Node.js
+  services, APIs, CLI tools, or packages.
+user-invocable: false
 ---
 
-@../conventions-general/SKILL.md
+@../general/SKILL.md
 
 # Node / pnpm Conventions
 
-> Extends conventions-general (auto-imported above).
+> Extends general (auto-imported above).
 > Project-specific rules always override these defaults.
 
 ## Modules

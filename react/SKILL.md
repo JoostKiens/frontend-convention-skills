@@ -1,16 +1,16 @@
 ---
-name: conventions-react
 description: >
-  React conventions for frontend projects. Auto-imports conventions-general.
-  Project-specific or team conventions always take precedence; flag conflicts
-  rather than silently picking one.
+  React coding conventions: components, hooks, state management, performance,
+  data fetching, and styling. Use when writing or reviewing React components
+  or hooks.
+user-invocable: false
 ---
 
-@../conventions-general/SKILL.md
+@../general/SKILL.md
 
 # React Conventions
 
-> Extends conventions-general (auto-imported above).
+> Extends general (auto-imported above).
 > Project-specific rules always override these defaults.
 
 

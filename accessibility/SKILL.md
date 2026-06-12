@@ -1,10 +1,8 @@
 ---
-name: conventions-accessibility
 description: >
-  Accessibility conventions for HTML-rendering projects. Framework-agnostic:
-  applies to React, Vue, Svelte, or vanilla JS. Load alongside the relevant
-  framework skill. Project-specific or team conventions always take precedence;
-  flag conflicts rather than silently picking one.
+  Web accessibility conventions: semantic HTML, ARIA, focus management,
+  labels, and images. Use when writing HTML or JSX that renders to the DOM.
+user-invocable: false
 ---
 
 # Accessibility Conventions

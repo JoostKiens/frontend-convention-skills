@@ -1,12 +1,9 @@
 ---
-name: conventions-general
 description: >
-  Base JS/TS coding conventions applicable to any JavaScript or TypeScript
-  project: React apps, Node services, CLI tools, or packages. Load this skill
-  in every JS/TS project. conventions-react and conventions-node extend this
-  skill; load those alongside this one when relevant. Project-specific or
-  team conventions always take precedence; flag conflicts rather than silently
-  picking one.
+  JS/TS coding conventions: naming, functions, control flow, async,
+  TypeScript, testing, and design principles. Use when writing or reviewing
+  any JavaScript or TypeScript code.
+user-invocable: false
 ---
 
 # General JS/TS Coding Conventions
