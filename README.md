@@ -22,43 +22,29 @@ DRY with restraint, and hard-won experience across many projects and teams.
 each auto-import their dependencies, so you only need to load the leaf skill
 for your project.
 
-## What's in here and why
+## Philosophy
 
-Most conventions files are a list of rules. These go one step further: every
-rule has a reason, and where the right call depends on context, the context
-is described. A few examples of intentional decisions:
+Every rule has a reason. Where the right call depends on context, that context
+is described — not just what to do, but when and why. A few decisions that
+illustrate the approach:
 
 **DRY with restraint:** blanket DRY produces premature abstractions that are
 harder to change than the duplication they replaced. The rule of three is a
 better guide: duplicate once, extract on the third occurrence.
-
-**Magic values, with an escape hatch:** named constants improve readability
-when a value's meaning isn't clear from context. But in configuration-heavy
-code (a mapping library, a chart config), the property key already provides
-the context. Extracting adds noise rather than clarity.
-
-**Discriminated unions over boolean flags:** booleans can express impossible
-states (`isLoading: true, isError: true`). A discriminated union makes
-impossible states unrepresentable at the type level.
 
 **Component layout contract:** a component shouldn't know where it lives.
 Margins, explicit widths, and absolute positioning on outer elements couple a
 component to its context and make it harder to reuse. Layout is the parent's
 responsibility.
 
-**Dependency inversion in hooks:** hooks that import API clients directly
-can't be tested without module mocking. Receiving dependencies as parameters
-keeps them pure and composable.
-
 **Foundation and domain layers:** separating components by domain knowledge
 rather than reusability makes the boundary meaningful. A foundation component
 can be extracted to any project; a domain component cannot. The one-way
 dependency rule (foundation never imports domain) keeps that boundary intact.
 
-**Co-location:** tests, styles, and component-specific hooks live next to the
-component they belong to. A parallel folder tree (`__tests__/`, `styles/`)
-splits things that change together, making every edit touch more files than
-it should.
+The skills are composable: load only the ones that apply to your stack. Every
+rule can be extended, removed, or overridden to fit your project — see
+[These are defaults, not dogma](#these-are-defaults-not-dogma).
 
 ## How I use these
 
