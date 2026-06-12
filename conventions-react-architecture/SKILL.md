@@ -7,7 +7,6 @@ description: >
   rather than silently picking one.
 ---
 
-@../conventions-general/SKILL.md
 @../conventions-react/SKILL.md
 
 # Frontend Architecture Conventions

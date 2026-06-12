@@ -71,6 +71,10 @@ description: >
 - Handle `SIGTERM` gracefully: stop accepting new work, finish in-flight
   requests, then exit cleanly; containers and orchestrators send `SIGTERM`
   before forcibly killing the process
+- Lifecycle handlers are registered at module level in the application entry
+  point — this is the intended exception to the general no-side-effects-at-
+  module-level rule; keep it confined to the entry point, never in library or
+  utility modules
   ```ts
   process.on('SIGTERM', async () => {
     await server.close();
