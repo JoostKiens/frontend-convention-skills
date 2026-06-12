@@ -8,8 +8,10 @@ description: >
 # Frontend Conventions
 
 Before **writing or reviewing code** in a JS/TS project, invoke the most
-specific skill that applies. Dependencies are pulled in automatically — you
-do not need to load a skill's dependencies separately.
+specific skill that applies using the Skill tool. The names below are exact
+— do not list files or read the skills directory to discover them. Dependencies
+are pulled in automatically; you do not need to load a skill's dependencies
+separately.
 
 | When you are about to… | Invoke |
 | --- | --- |
