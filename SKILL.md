@@ -1,5 +1,5 @@
 ---
-name: conventions
+name: frontend-conventions
 description: >
   Frontend coding conventions for JS/TS projects. Invokes the relevant
   convention skill before writing or reviewing code.
