@@ -42,9 +42,9 @@ rather than reusability makes the boundary meaningful. A foundation component
 can be extracted to any project; a domain component cannot. The one-way
 dependency rule (foundation never imports domain) keeps that boundary intact.
 
-The skills are composable: load only the ones that apply to your stack. Every
-rule can be extended, removed, or overridden to fit your project — see
-[These are defaults, not dogma](#these-are-defaults-not-dogma).
+The skills are composable and load on demand: the dispatcher invokes only
+what each task needs. Every rule can be extended, removed, or overridden to
+fit your project. See [These are defaults, not dogma](#these-are-defaults-not-dogma).
 
 ## How I use these
 
@@ -60,8 +60,23 @@ To update to the latest version:
 git -C ~/.claude/skills/frontend-convention-skills pull
 ```
 
-Each project's `CLAUDE.md` references whichever skills apply. Load only the
-leaf skill — dependencies are pulled in automatically.
+### On-demand (recommended)
+
+Add a single line to any project's `CLAUDE.md`:
+
+```markdown
+@~/.claude/skills/frontend-convention-skills/SKILL.md
+```
+
+This loads a lightweight dispatcher at session start. Claude then invokes
+the relevant convention skill automatically before writing or reviewing code
+— only paying the token cost when the conventions are actually needed.
+
+### Always-on
+
+If you prefer conventions to be in context from the start of every session,
+reference the specific skill directly. Load only the leaf skill for your
+project — dependencies are pulled in automatically.
 
 React app with architecture conventions:
 
@@ -112,9 +127,6 @@ actions):
 pnpm monorepo with separate frontend and backend packages: add a `CLAUDE.md`
 to each package pointing to the relevant skill. The root `CLAUDE.md` can load
 `conventions-general` if there is shared code at the root level.
-
-Claude Code loads the skills at the start of each session. They inform how
-Claude writes and reviews code without being re-explained every time.
 
 ## These are defaults, not dogma
 
