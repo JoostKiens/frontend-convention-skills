@@ -80,10 +80,16 @@ If you only want a subset of the conventions, reference the sub-skills directly.
 `frontend-conventions:react` and `frontend-conventions:react-architecture` each
 auto-import their dependencies, so you only need the most specific one.
 
-React app with architecture conventions:
+React app with architecture conventions (folder structure, component layers, module boundaries in scope):
 
 ```markdown
 Before writing or reviewing code, invoke the `frontend-conventions:react-architecture` skill.
+```
+
+React app without architecture concerns (components and hooks only, folder structure out of scope):
+
+```markdown
+Before writing or reviewing code, invoke the `frontend-conventions:react` skill.
 ```
 
 Node.js package:
