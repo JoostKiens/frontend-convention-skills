@@ -7,11 +7,11 @@ description: >
 user-invocable: false
 ---
 
-@../react/SKILL.md
-
 # Frontend Architecture Conventions
 
-> Extends general and react (both auto-imported above).
+> **Before applying these conventions, invoke the `frontend-conventions:general`
+> and `frontend-conventions:react` skills** to load the conventions these build on.
+>
 > Project-specific rules always override these defaults.
 
 ## Component Layers
