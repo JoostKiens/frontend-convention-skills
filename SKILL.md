@@ -9,9 +9,9 @@ description: >
 
 Before **writing or reviewing code** in a JS/TS project, invoke the most
 specific skill that applies using the Skill tool. The names below are exact
-— do not list files or read the skills directory to discover them. Dependencies
-are pulled in automatically; you do not need to load a skill's dependencies
-separately.
+— do not list files or read the skills directory to discover them. Each skill
+instructs you to load the base conventions it builds on, so invoke only the
+most specific one that applies.
 
 | When you are about to… | Invoke |
 | --- | --- |
@@ -21,8 +21,9 @@ separately.
 | Write or review Node.js services, APIs, CLI tools, or packages | `frontend-conventions:node` |
 | Write or review HTML or JSX that renders to the DOM | `frontend-conventions:accessibility` |
 
-`frontend-conventions:react` auto-imports `frontend-conventions:general`.
-`frontend-conventions:react-architecture` auto-imports both. For a full-stack app,
+`frontend-conventions:react` builds on `frontend-conventions:general`, and
+`frontend-conventions:react-architecture` builds on both — when you invoke them,
+they will instruct you to load those dependencies first. For a full-stack app,
 invoke `frontend-conventions:react-architecture` for frontend code and
 `frontend-conventions:node` for backend code.
 

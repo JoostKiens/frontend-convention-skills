@@ -7,11 +7,11 @@ description: >
 user-invocable: false
 ---
 
-@../general/SKILL.md
-
 # Node / pnpm Conventions
 
-> Extends general (auto-imported above).
+> **Before applying these conventions, invoke the `frontend-conventions:general`
+> skill** to load the base JS/TS conventions these build on.
+>
 > Project-specific rules always override these defaults.
 
 ## Modules
