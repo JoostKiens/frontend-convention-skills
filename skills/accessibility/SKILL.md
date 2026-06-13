@@ -1,4 +1,5 @@
 ---
+name: accessibility
 description: >
   Web accessibility conventions: semantic HTML, ARIA, focus management,
   labels, and images. Use when writing HTML or JSX that renders to the DOM.

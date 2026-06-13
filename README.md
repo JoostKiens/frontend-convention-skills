@@ -10,13 +10,13 @@ DRY with restraint, and hard-won experience across many projects and teams.
 
 ## Skills
 
-| Skill                                                                              | Use in                                      |
-| ---------------------------------------------------------------------------------- | ------------------------------------------- |
-| [`frontend-conventions:general`](./general/SKILL.md)                               | Any JS/TS project                           |
-| [`frontend-conventions:node`](./node/SKILL.md)                                     | Node.js services, APIs, CLI tools, packages |
-| [`frontend-conventions:react`](./react/SKILL.md)                                   | React applications                          |
-| [`frontend-conventions:react-architecture`](./react-architecture/SKILL.md)         | React apps where architecture is in scope   |
-| [`frontend-conventions:accessibility`](./accessibility/SKILL.md)                   | Any project that renders HTML               |
+| Skill                                                                                        | Use in                                      |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| [`frontend-conventions:general`](./skills/general/SKILL.md)                                 | Any JS/TS project                           |
+| [`frontend-conventions:node`](./skills/node/SKILL.md)                                       | Node.js services, APIs, CLI tools, packages |
+| [`frontend-conventions:react`](./skills/react/SKILL.md)                                     | React applications                          |
+| [`frontend-conventions:react-architecture`](./skills/react-architecture/SKILL.md)           | React apps where architecture is in scope   |
+| [`frontend-conventions:accessibility`](./skills/accessibility/SKILL.md)                     | Any project that renders HTML               |
 
 ## Philosophy
 
@@ -42,11 +42,11 @@ The skills are composable and load on demand: the dispatcher invokes only
 what each task needs. Every rule can be extended, removed, or overridden to
 fit your project. See [These are defaults, not dogma](#these-are-defaults-not-dogma).
 
-## How I use these
+## Installation
 
 This repo is a [Claude Code plugin](https://code.claude.com/docs/en/plugins).
 Installing it makes each convention skill available under the
-`frontend-conventions:` namespace, which is what enables on-demand invocation.
+`frontend-conventions:` namespace.
 
 Install by cloning into `~/.claude/skills/` as `frontend-conventions`:
 
@@ -60,76 +60,62 @@ To update to the latest version:
 git -C ~/.claude/skills/frontend-conventions pull
 ```
 
-### On-demand (recommended)
+## Usage
 
-Add a single line to any project's `CLAUDE.md`:
+Add a directive to your project's `CLAUDE.md` to tell Claude when to invoke
+the conventions. Skills are loaded on demand — token cost is only paid when
+the skill is actually invoked.
+
+### Full dispatcher (recommended)
+
+Invokes the most specific skill for whatever code is being written:
 
 ```markdown
-@~/.claude/skills/frontend-conventions/SKILL.md
+Before writing or reviewing any JavaScript or TypeScript code, invoke the `frontend-conventions` skill.
 ```
 
-This loads a lightweight dispatcher at session start. Claude then invokes
-the relevant convention skill automatically before writing or reviewing code,
-only paying the token cost when the conventions are actually needed.
+### Pick specific sub-skills
 
-### Always-on
-
-If you prefer conventions to be in context from the start of every session,
-reference the specific skill directly. `frontend-conventions:node`,
-`frontend-conventions:react`, and `frontend-conventions:react-architecture`
-each auto-import their dependencies, so you only need to load the leaf skill
-for your project.
+If you only want a subset of the conventions, reference the sub-skills directly.
+`frontend-conventions:react` and `frontend-conventions:react-architecture` each
+auto-import their dependencies, so you only need the most specific one.
 
 React app with architecture conventions:
 
 ```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/react-architecture/SKILL.md
-```
-
-React app without architecture conventions:
-
-```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/react/SKILL.md
+Before writing or reviewing code, invoke the `frontend-conventions:react-architecture` skill.
 ```
 
 Node.js package:
 
 ```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/node/SKILL.md
+Before writing or reviewing code, invoke the `frontend-conventions:node` skill.
 ```
 
-Any other JS/TS project (no Node or React):
+Any JS/TS project without React or Node:
 
 ```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/general/SKILL.md
+Before writing or reviewing code, invoke the `frontend-conventions:general` skill.
 ```
 
 `frontend-conventions:accessibility` is framework-agnostic and opt-in; add
-it to any project that renders HTML:
+it alongside the relevant skill for any project that renders HTML:
 
 ```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/react-architecture/SKILL.md
-@~/.claude/skills/frontend-conventions/accessibility/SKILL.md
+Before writing or reviewing code, invoke the `frontend-conventions:react-architecture` skill.
+Before writing or reviewing any HTML or JSX, also invoke the `frontend-conventions:accessibility` skill.
 ```
 
-Full-stack app in a single repo (e.g. Next.js with API routes or server
-actions):
+Full-stack app (e.g. Next.js with API routes or server actions):
 
 ```markdown
-# Conventions
-@~/.claude/skills/frontend-conventions/react-architecture/SKILL.md
-@~/.claude/skills/frontend-conventions/node/SKILL.md
+Before writing or reviewing frontend code, invoke the `frontend-conventions:react-architecture` skill.
+Before writing or reviewing backend code, invoke the `frontend-conventions:node` skill.
 ```
 
 pnpm monorepo with separate frontend and backend packages: add a `CLAUDE.md`
-to each package pointing to the relevant skill. The root `CLAUDE.md` can load
-`@~/.claude/skills/frontend-conventions/general/SKILL.md` if there is shared
-code at the root level.
+to each package with the relevant directive. The root `CLAUDE.md` can invoke
+`frontend-conventions:general` if there is shared code at the root level.
 
 ## These are defaults, not dogma
 

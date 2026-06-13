@@ -1,4 +1,5 @@
 ---
+name: react-architecture
 description: >
   React architecture conventions: component layers (foundation vs domain),
   global state, co-location, and module boundaries. Use when working on

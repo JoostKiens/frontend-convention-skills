@@ -1,4 +1,5 @@
 ---
+name: node
 description: >
   Node.js conventions: ESM modules, pnpm, environment variables, structured
   logging, and process lifecycle. Use when writing or reviewing Node.js

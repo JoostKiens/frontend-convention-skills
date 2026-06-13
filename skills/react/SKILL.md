@@ -1,4 +1,5 @@
 ---
+name: react
 description: >
   React coding conventions: components, hooks, state management, performance,
   data fetching, and styling. Use when writing or reviewing React components
