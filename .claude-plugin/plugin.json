@@ -1,4 +1,5 @@
 {
   "name": "frontend-conventions",
-  "description": "Frontend coding conventions for JS/TS, React, Node.js, and accessibility."
+  "description": "Frontend coding conventions for JS/TS, React, Node.js, and accessibility.",
+  "skills": ["."]
 }
