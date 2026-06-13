@@ -1,4 +1,5 @@
 ---
+name: general
 description: >
   JS/TS coding conventions: naming, functions, control flow, async,
   TypeScript, testing, and design principles. Use when writing or reviewing
