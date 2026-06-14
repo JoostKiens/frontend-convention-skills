@@ -5,6 +5,8 @@ description: >
   logging, and process lifecycle. Use when writing or reviewing Node.js
   services, APIs, CLI tools, or packages.
 user-invocable: false
+model: claude-haiku-4-5
+effort: low
 ---
 
 # Node / pnpm Conventions
