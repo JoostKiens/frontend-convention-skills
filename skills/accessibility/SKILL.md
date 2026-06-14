@@ -4,6 +4,7 @@ description: >
   Web accessibility conventions: semantic HTML, ARIA, focus management,
   labels, and images. Use when writing HTML or JSX that renders to the DOM.
 user-invocable: false
+model: claude-haiku-4-5
 ---
 
 # Accessibility Conventions

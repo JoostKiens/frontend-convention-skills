@@ -5,6 +5,7 @@ description: >
   TypeScript, testing, and design principles. Use when writing or reviewing
   any JavaScript or TypeScript code.
 user-invocable: false
+model: claude-haiku-4-5
 ---
 
 # General JS/TS Coding Conventions
@@ -76,35 +77,7 @@ user-invocable: false
 - Avoid `else` after a `return`; it adds nesting with no benefit
 - Prefer a flat sequence of statements over a nested tree of conditions
 
-### Prefer this:
-```ts
-function processOrder(order: Order | null) {
-  if (!order) return null;
-  if (!order.isValid) throw new Error('Invalid order');
-  if (order.isPending) return processPending(order);
-
-  return fulfillOrder(order);
-}
-```
-
-### Over this:
-```ts
-function processOrder(order: Order | null) {
-  if (order) {
-    if (order.isValid) {
-      if (!order.isPending) {
-        return fulfillOrder(order);
-      } else {
-        return processPending(order);
-      }
-    } else {
-      throw new Error('Invalid order');
-    }
-  } else {
-    return null;
-  }
-}
-```
+See [examples.md](examples.md) for a control-flow before/after comparison.
 
 ## Async
 
@@ -229,23 +202,8 @@ function processOrder(order: Order | null) {
   the type model; if you need one, add a comment explaining why
 - Prefer `type` over `interface` for most definitions; use `interface` only
   when intentional declaration merging or OOP-style extension is needed
-- Use discriminated unions to model state instead of boolean flag combinations:
-  ```ts
-  // ✅
-  type RequestState =
-    | { status: 'idle' }
-    | { status: 'loading' }
-    | { status: 'success'; data: User }
-    | { status: 'error'; error: Error };
-
-  // ❌ booleans can express impossible states
-  type RequestState = {
-    isLoading: boolean;
-    isError: boolean;
-    data?: User;
-    error?: Error;
-  };
-  ```
+- Use discriminated unions to model state instead of boolean flag combinations;
+  see [examples.md](examples.md) for a comparison
 - Use `satisfies` to validate a value against a type without widening it
 - Avoid enums; prefer `as const` objects or union types. Enums have
   surprising runtime behaviour and complicate tree-shaking
