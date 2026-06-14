@@ -6,7 +6,6 @@ description: >
   any JavaScript or TypeScript code.
 user-invocable: false
 model: claude-haiku-4-5
-effort: low
 ---
 
 # General JS/TS Coding Conventions

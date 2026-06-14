@@ -6,7 +6,6 @@ description: >
   or hooks.
 user-invocable: false
 model: claude-haiku-4-5
-effort: low
 ---
 
 # React Conventions

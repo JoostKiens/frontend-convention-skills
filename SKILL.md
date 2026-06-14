@@ -3,8 +3,6 @@ name: frontend-conventions
 description: >
   Frontend coding conventions for JS/TS projects. Invokes the relevant
   convention skill before writing or reviewing code.
-model: claude-haiku-4-5
-effort: low
 ---
 
 # Frontend Conventions

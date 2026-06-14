@@ -5,6 +5,7 @@ description: >
   global state, co-location, and module boundaries. Use when working on
   folder structure, component layering, or module organisation.
 user-invocable: false
+model: claude-haiku-4-5
 ---
 
 # Frontend Architecture Conventions

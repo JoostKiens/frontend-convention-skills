@@ -6,7 +6,6 @@ description: >
   services, APIs, CLI tools, or packages.
 user-invocable: false
 model: claude-haiku-4-5
-effort: low
 ---
 
 # Node / pnpm Conventions
