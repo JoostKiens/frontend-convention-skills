@@ -139,6 +139,16 @@ rather than reusability makes the boundary meaningful. A foundation component
 can be extracted to any project; a domain component cannot. The one-way
 dependency rule (foundation never imports domain) keeps that boundary intact.
 
+## Related
+
+[web-quality-skills](https://github.com/addyosmani/web-quality-skills) by Addy Osmani
+covers Lighthouse audits, Core Web Vitals, SEO, and full WCAG auditing. A good
+complement for projects where performance and accessibility review are in scope.
+
+[ponytail](https://ponytail.dev) pushes agents to write the least code that works:
+stdlib over custom, native over dependencies, one line over fifty. Pairs well with
+these conventions as a check on over-engineering.
+
 ## Contributing
 
 If you spot a rule that's wrong, incomplete, or missing important context,
