@@ -89,15 +89,25 @@ shared code at the root level, add a root `CLAUDE.md`:
 Before writing or reviewing code, invoke the `frontend-conventions:general` skill.
 ```
 
+## Linting and formatting
+
+These skills cover what linting and formatting can't: architecture decisions,
+naming quality, abstraction level, and design principles. For rules that can
+be automated, a linter and formatter are more reliable than a convention skill.
+
+The dispatcher reads your ESLint and Prettier configs automatically when the
+plugin is loaded. Where a linting or formatting rule covers the same ground
+as a convention skill, the config takes precedence.
+
 ## Skills
 
 | Skill                                                                      | Use in                                      |
 | -------------------------------------------------------------------------- | ------------------------------------------- |
-| [`frontend-conventions:general`](./skills/general/SKILL.md)                       | Any JS/TS project                           |
-| [`frontend-conventions:node`](./skills/node/SKILL.md)                             | Node.js services, APIs, CLI tools, packages |
-| [`frontend-conventions:react`](./skills/react/SKILL.md)                           | React applications                          |
-| [`frontend-conventions:react-architecture`](./skills/react-architecture/SKILL.md) | React apps where architecture is in scope   |
-| [`frontend-conventions:accessibility`](./skills/accessibility/SKILL.md)           | Any project that renders HTML               |
+| [`frontend-conventions:general`](./general/SKILL.md)                       | Any JS/TS project                           |
+| [`frontend-conventions:node`](./node/SKILL.md)                             | Node.js services, APIs, CLI tools, packages |
+| [`frontend-conventions:react`](./react/SKILL.md)                           | React applications                          |
+| [`frontend-conventions:react-architecture`](./react-architecture/SKILL.md) | React apps where architecture is in scope   |
+| [`frontend-conventions:accessibility`](./accessibility/SKILL.md)           | Any project that renders HTML               |
 
 ## These are defaults, not dogma
 
@@ -128,6 +138,20 @@ responsibility.
 rather than reusability makes the boundary meaningful. A foundation component
 can be extracted to any project; a domain component cannot. The one-way
 dependency rule (foundation never imports domain) keeps that boundary intact.
+
+## Related
+
+[web-quality-skills](https://github.com/addyosmani/web-quality-skills) by Addy Osmani is a good complement to this plugin. It covers Lighthouse audits, Core Web Vitals, SEO, and full WCAG auditing. The two sit at different points in the workflow: convention skills run while you're writing code; quality audit skills run when you're reviewing what's already there.
+
+## Related
+
+[web-quality-skills](https://github.com/addyosmani/web-quality-skills) by Addy Osmani
+covers Lighthouse audits, Core Web Vitals, SEO, and full WCAG auditing. A good
+complement for projects where performance and accessibility review are in scope.
+
+[ponytail](https://ponytail.dev) pushes agents to write the least code that works:
+stdlib over custom, native over dependencies, one line over fifty. Pairs well with
+these conventions as a check on over-engineering.
 
 ## Contributing
 
