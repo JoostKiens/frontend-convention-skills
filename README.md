@@ -141,10 +141,6 @@ dependency rule (foundation never imports domain) keeps that boundary intact.
 
 ## Related
 
-[web-quality-skills](https://github.com/addyosmani/web-quality-skills) by Addy Osmani is a good complement to this plugin. It covers Lighthouse audits, Core Web Vitals, SEO, and full WCAG auditing. The two sit at different points in the workflow: convention skills run while you're writing code; quality audit skills run when you're reviewing what's already there.
-
-## Related
-
 [web-quality-skills](https://github.com/addyosmani/web-quality-skills) by Addy Osmani
 covers Lighthouse audits, Core Web Vitals, SEO, and full WCAG auditing. A good
 complement for projects where performance and accessibility review are in scope.
