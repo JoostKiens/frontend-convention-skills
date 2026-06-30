@@ -89,6 +89,16 @@ shared code at the root level, add a root `CLAUDE.md`:
 Before writing or reviewing code, invoke the `frontend-conventions:general` skill.
 ```
 
+## Linting and formatting
+
+These skills cover what linting and formatting can't: architecture decisions,
+naming quality, abstraction level, and design principles. For rules that can
+be automated, a linter and formatter are more reliable than a convention skill.
+
+When a skill is invoked, it instructs Claude to read your ESLint and Prettier
+configs before writing or reviewing code, and to defer to those rules where
+they overlap with convention skill guidance.
+
 ## Skills
 
 | Skill                                                                      | Use in                                      |

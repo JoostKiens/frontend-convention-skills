@@ -30,6 +30,16 @@ invoke `frontend-conventions:react-architecture` for frontend code and
 Do not invoke for answering questions, explaining concepts, or planning —
 only when code is about to be written or reviewed.
 
+## Tooling
+
+Before writing or reviewing code, read the following config files if they
+exist in the project:
+- `eslint.config.*` or `.eslintrc.*`
+- `prettier.config.*` or `.prettierrc.*`
+
+Where a linting or formatting rule covers the same ground as a convention
+skill, the config file takes precedence.
+
 Project-specific conventions in CLAUDE.md always take precedence. If a
 loaded skill conflicts with project conventions, flag the conflict rather
 than silently picking one.
