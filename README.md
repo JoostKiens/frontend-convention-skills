@@ -103,11 +103,11 @@ they overlap with convention skill guidance.
 
 | Skill                                                                      | Use in                                      |
 | -------------------------------------------------------------------------- | ------------------------------------------- |
-| [`frontend-conventions:general`](./general/SKILL.md)                       | Any JS/TS project                           |
-| [`frontend-conventions:node`](./node/SKILL.md)                             | Node.js services, APIs, CLI tools, packages |
-| [`frontend-conventions:react`](./react/SKILL.md)                           | React applications                          |
-| [`frontend-conventions:react-architecture`](./react-architecture/SKILL.md) | React apps where architecture is in scope   |
-| [`frontend-conventions:accessibility`](./accessibility/SKILL.md)           | Any project that renders HTML               |
+| [`frontend-conventions:general`](./skills/general/SKILL.md)                       | Any JS/TS project                           |
+| [`frontend-conventions:node`](./skills/node/SKILL.md)                             | Node.js services, APIs, CLI tools, packages |
+| [`frontend-conventions:react`](./skills/react/SKILL.md)                           | React applications                          |
+| [`frontend-conventions:react-architecture`](./skills/react-architecture/SKILL.md) | React apps where architecture is in scope   |
+| [`frontend-conventions:accessibility`](./skills/accessibility/SKILL.md)           | Any project that renders HTML               |
 
 ## These are defaults, not dogma
 
